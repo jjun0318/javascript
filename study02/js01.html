@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <script>
+        // 이스케이프 문자
+        // 문자열 안에서 입력되고 특정한 기능을 하는 문자
+        // 문자열 안에서 '\'와 함께 지정한 문자를 입력할 경우 이스케이프 문자로 지정된 문자의 기능이 동작함
+        // \' : 문자로써 작은 따옴표(') 를 사용하고자 할 경우 사용
+        // \" : 문자로써 큰 따옴표(") 를 사용하고자 할 경우 사용
+        // \\ : 문자로써 역 슬래시(\) 를 사용하고자 할 경우 사용
+        // \n : 줄 바꿈 문자
+        // \t : tab 기능
+
+        // \f : 폼피드 (사용안함)
+        // \r : 리턴키 (사용안함)
+        // \b : 백스페이스 (사용안함)
+        // \v : 세로 tab 기능 (사용안함)
+
+        var str1 = "이스케이프 문자는 문자열 안에서 역슬래시와 함께 사용하는 문자";
+        console.log(str1);
+        var str2 = "이스케이프 '문자'는 \"문자열\" 안에서 \"역슬래시\"와 함께 사용하는 문자";
+        console.log(str2);
+        var str3 = '이스케이프 "문자"는 \'문자열\' 안에서 \'역슬래시\'와 함께 사용하는 문자';
+        console.log(str3);
+        var str4 = "C:\\fullstack405\\javascript\\study02";
+        console.log(str4);
+        var str5 = "이스케이프 문자는\n 문자열 안에서\n\n 역슬래시와\t 함께\t 사용하는\t\t 문자";
+        console.log(str5);
+
+        // 논리형 타입
+        // 데이터를 논리적으로 참인지 거짓인지를 구분하는 데이터 타입
+        // true, false 2가지 값만 가지고 있음
+        // 문자열이 아닌 자체적인 데이터 타입이기 때문에 "" 나 '' 를 사용하지 않고 true, flase를 입력
+        // 주로 데이터 비교 시 사용함
+        console.log("\n ----- 논리형 타입 -----\n");
+        var b1 = true;
+        var b2 = false;
+        console.log(10 < 5); // 결과값 flase
+        console.log(10 > 5 || 20 > 10); // 논리 연산 결과값 true
+        if (10 > 5) {
+            console.log("10이 5보다 크다");
+        }
+        else {
+            console.log("10이 5보다 크지 않다");
+        }
+        
+        // 자바스크립트에서 true 인 값과 false인 값
+        // true : 숫자 0이 아닌 모든값, 숫자 0.0이 아닌 모든 값, 빈 문자열이 아닌 모든 문자열,true
+        // false : 숫자 0, 숫자 0.0, 숫자 -0, 빈 문자열 "", 빈 문자열 '', null, undefind, false, NaN
+        // Boolean(데이터) : 결과값을 논리형 타입으로 변환하는 함수
+        console.log("\n ----- 논리형의 false 인 값 -----\n");
+        var b3 = 0;
+        console.log(Boolean(b3));
+        var b4 = 0;
+        console.log(Boolean(b4));
+        var b5 = 0.0;
+        console.log(Boolean(b5));
+        var b6 = false;
+        console.log(Boolean(b6));
+        var b7 = "";
+        console.log(Boolean(b7));
+        var b8 = '';
+        console.log(Boolean(b8));
+        var b9 = null;
+        console.log(Boolean(b9));
+        var b10 = undefined;
+        console.log(Boolean(b10));
+        var b11 = NaN;
+        console.log(Boolean(b11));
+        console.log("\n ----- 논리형의 true 인 값 -----\n");
+        b3 = 10;
+        console.log(Boolean(b3));
+        b4 = -10;
+        console.log(Boolean(b4));
+        b5 = 3.14;
+        console.log(Boolean(b5));
+        b6 = -3.14;
+        console.log(Boolean(b6));
+        b7 = true;
+        console.log(Boolean(b7));
+        b8 = "문자열";
+        console.log(Boolean(b8));
+        b9 = " ";
+        console.log(Boolean(b9));
+        b10 = ' ';
+        console.log(Boolean(b10));
+        b11 = "1234567"
+        console.log(Boolean(b11));
+        b11 = "0";
+        console.log(Boolean(b11));
+
+        // null, undefined
+        // 데이터가 없다는 의미의 데이터 타입
+        // 데이터가 존재하지 않기 때문에 연산이 불가능함
+        // null : 데이터가 없음, 변수에 기존의 데이터를 저장하여 사용한 후 데이터가 비어 있는 상태
+        // undefined : 데이터가 없음, 변수를 선언한 후 데이터를 한번도 저장하지 않은 상태, 변수를 선언만 하고 데이터를 저장하지 않으면 undefined 상태가 됨
+        console.log("\n ----- null, undefined -----\n")
+        var value; // undefined 상태
+        console.log(value); // undefined 상태
+        console.log(value + 100); //undefined는 숫자가 아니기 때문에 숫자와 연산이 불가능함 그래서 NaN으로 표시됨
+        console.log(value + "문자열");
+        value = 100; // 데이터가 저장된 상태
+        console.log(value);
+        console.log(value + 100); // value에 100이 저장되어 있기 때문에 연산 가능
+        value = null; // 데이터가 없는 빈 상태, null인 상태
+        console.log(value); // value가 null인 상태
+        console.log(value + 100); // value의 값이 null이고 숫자와 연산 시 숫자만 출력
+        console.log(value + "문자열");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

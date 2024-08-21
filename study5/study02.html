@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // hide() : jquery에서 제공하는 지정한 태그를 숨기는 함수, css의 display: none 설정으로 변경
+            // show() : jquery에서 제공하는 지정한 태그를 보이게 하는 함수, css의 display 속성을 원래 태그가 가지고 있던 값으로 되돌림
+            // toggle() : jquery에서 제공하는 지정한 태그를 숨기거나 보이게 하는 함수, hide()/show() 함수를 현재 태그의 상태에 따라 번갈아 가며 사용
+            // 사용법 :
+            // $(css선택자).hide|show|toggle(속도, 콜백함수);
+            // 속도 : slow, fast, 1/1000 초로 직접 입력 가능
+            // 콜백함수 : hide/show/toggle 함수가 실행완료 된 후 추가로 동작할 부분을 입력
+            $("#btn01").on("click", function () {
+                $("#img01").hide();
+            });
+
+            $("#btn02").on("click", function () {
+                $("#img01").show();
+            });
+
+            $("#btn03").on("click", function () {
+                // $("#img01").toggle(); // 기본 사용
+                // $("#img01").toggle("slow"); // 지정된 속도 slow
+                // $("#img01").toggle("fast"); // 지정된 속도 fast
+                // $("#img01").toggle(2000); // 사용자가 직접 속도 지정, 1/1000 초로 설정
+                // 해당 기능 사용 후 추가로 동작해야 할 경우 사용
+                $("#img01").toggle("slow",function () {
+                    alert("토글 실행 완료");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container mt-5">
+    <h3>jquery 효과, hide/show</h3>
+    <div>
+        <button type="button" class="btn btn-primary" id="btn01">숨기기</button>
+        <button type="button" class="btn btn-primary" id="btn02">보이기</button>
+        <button type="button" class="btn btn-primary" id="btn03">숨기기보이기 토글버튼</button>
+
+<!--        <div id="div01">-->
+<!--            <h5>버튼을 클릭 시 숨겨졌다가 보였다가 하는 부분입니다.</h5>-->
+<!--        </div>-->
+    </div>
+    <img src="./.idea/윈터%20움짤3.gif" alt="윈터" id="img01">
+</div>
+</body>
+</html>

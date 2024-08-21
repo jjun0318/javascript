@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 제어문</title>
+
+    <script>
+        // switch 문
+        // if 문과 같은 제어문의 한 종류
+        // 조건식에 해당 하는 값을 가지고 있는 case 블록의 소스코드를 실행하는 방식
+        // 사용법
+        // switch (조건식) {
+        //    case 값1 :
+        //    조건식의 결과가 case 의 값과 같을 경우 실행할 소스코드 ...
+        //    break;
+        //    case 값2 :
+        //    조건식의 결과가 case 의 값과 같을 경우 실행할 소스코드 ...
+        //    break;
+        //    case 값3 :
+        //    조건식의 결과가 case 의 값과 같을 경우 실행할 소스코드 ...
+        //    break;
+        //    ...
+        //    default:
+        //    조건식의 결과가 case 의 값과 일치하는 것이 없을 경우 실행할 소스코드
+        //    break;
+        // }
+
+        // new Date() : 자바스크립트에서 기본 제공하는 날짜 관련 클래스, new 키워드와 함께 사용 시 현재 날짜를 출력함
+        // getFullYear() : Date() 를 통해서 생성된 날짜를 기준으로 년도를 출력함
+        // getMonth() : Date() 를 통해서 생성된 날짜를 기준으로 월을 출력함
+        // getDate() : Date() 를 통해서 생성된 날짜를 기준으로 일을 출력함
+        // getDay() : Date() 통해서 생성된 날짜를 기준으로 하여 일주일 중 지정한 날짜의 요일을 0 ~ 6 까지의 숫자로 출력
+        // 0 : 일요일, 1 : 월요일, 6 : 토요일
+            var today = new Date();
+            var dayOfWeek = today.getDay();
+            console.log("오늘 날짜는 : " + today);
+            console.log("오늘 요일은 : ");
+
+
+        var dayOfWeek = new Date().getDay();
+
+        switch (dayOfWeek) {
+            case 1:
+                console.log("월요일");
+                break;
+
+            case 2:
+                console.log("화요일");
+                break;
+
+            case 3:
+                console.log("수요일");
+                break;
+
+            case 4:
+                console.log("목요일");
+                break;
+
+            case 5:
+                console.log("금요일");
+                break;
+
+            case 6:
+                console.log("토요일");
+                break;
+
+            default:
+                console.log("일요일");
+                break;
+        }
+
+        // switch ~ case 문 사용 시 주의점
+        // 1. 조건에 지정된 값을 입력하는 방식
+        // 2. case 문의 끝에 반드시 break; 문을 입력해야 함
+        // 3. default 문은 생략 가능함
+
+        // if 문과 switch ~ case 문의 차이점
+        // if문은 조건식에 범위를 설정할 수 있음
+        // switch ~ case 문의 조건식에는 고정된 값을 사용함
+
+        // if문이 switch ~ case 문을 100% 대체 가능
+        console.log("\n ----- 요일 출력 if 문으로 대체하기 -----\n");
+        var dayOfWeek = today.getDay();
+
+        if (dayOfWeek == 1) {
+            console.log("오늘은 월요일");
+        }
+        else if (dayOfWeek == 2) {
+            console.log("오늘은 화요일");
+        }
+        else if (dayOfWeek == 4) {
+            console.log("오늘은 목요일");
+        }
+        else if (dayOfWeek == 5) {
+            console.log("오늘은 금요일");
+        }
+        else if (dayOfWeek == 6) {
+            console.log("오늘은 토요일");
+        }
+        else    {
+            console.log("오늘은 일요일");
+        }
+
+        // switch ~ case 문 사용 시 주의점
+        // 1. 조건에 지정된 값을 입력하는 방식
+        // 2. case 문의 끝에 반드시 break; 문을 입력해야 함
+        // 3. default 문은 생략 가능함
+        console.log("\n ----- break 를 생략하면 안되는 이유 -----\n");
+        var today = new Date("2024-05-21");
+            var dayOfWeek = today.getDay();
+            console.log("오늘 날짜는 : " + today);
+            console.log("오늘 요일은 : ");
+
+        switch (dayOfWeek) {
+            case 1:
+                console.log("월요일");
+                break;
+
+                // switch ~ case 문 사용 시 break;를 생략하게 되면 지정한 case 부터 break;를 만날 때까지 계속 실행
+            case 2:
+                console.log("화요일");
+                
+
+            case 3:
+                console.log("수요일");
+                
+
+            case 4:
+                console.log("목요일");
+                break;
+
+            case 5:
+                console.log("금요일");
+                break;
+
+            case 6:
+                console.log("토요일");
+                break;
+
+            default:
+                console.log("일요일");
+                break;
+        }
+
+        // 일부러 break를 생략하여 범위형 조건식을 사용할 수 있음
+        console.log("\n ----- 일부러 break 생략 -----\n");
+        var today = new Date("2024-05-24");
+            var dayOfWeek = today.getDay();
+            console.log("오늘 날짜는 : " + today);
+            
+            switch (dayOfWeek) {
+                case 1 :
+                case 2 :
+                    console.log("오늘은 월화 드라마 하는날");
+                    break;
+
+                case 3:
+                case 4:
+                    console.log("오늘은 수목 드라마하는 날");
+                    break;
+
+                case 5:
+                    console.log("오늘은 불금!!");
+                    break;
+
+                default:
+                    console.log("주말이다!!");
+                    break;
+            }
+
+            // switch ~ case 문도 중첩 사용이 가능함
+
+            // 문제 1) 사용자 입력을 통해서 국어, 영어, 수학 점수를 모두 입력받고, 총합 및 평균 점수를 구하고, 평균에 대해서 등급을 표시하는 프로그램을 작성하세요
+            // 조건 1. else if 문 사용
+            // 조건 2. 90이상 A, 80이상 B, 70이상 C, 60이상 D, 60미만 F로 표기
+            // 조건 3. 변수명, 국어 = kor, 영어 = eng, 수학 = math, 총합 = total, 평균 = avg
+
+            var kor = 0;
+            var eng = 0;
+            var math = 0;
+            var avg = 0;
+            var level = "F";
+
+            kor = prompt("국어 점수를 입력해 주세요 ");
+            eng = prompt("영어 점수를 입력해 주세요 ");
+            math = prompt("수학 점수를 입력해 주세요 ");
+
+            kor = Number(kor);
+            eng = Number(eng);
+            math = Number(math);
+
+            total = kor + eng + math;
+
+            avg = total / 3;
+
+            if (avg >= 90) {
+                level = "A";
+            }
+            else if (avg >= 80) {
+                level = "B";
+            }
+            else if (avg >= 70) {
+                level = "C";
+            }
+            else if (avg >= 60) {
+                level = "D";
+            }
+
+            console.log("당신의 총점은 " + total + "점이고, 평균은 " + avg + "점이며, 등급은 " + level + "입니다.");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

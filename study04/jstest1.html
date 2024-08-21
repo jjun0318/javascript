@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    // 비밀번호는 1234 사용자가 1234를 입력했을때만 승인되어 구구단에 5단을 뺀 나머지를 다 보여줌
+    // 1234는 항상 숫자인지 확인해야하고 숫자 1234가 아닐때 재입력
+
+    var userNumber
+        do {
+            userNumber = prompt("1234 만 입력하시오.");
+        } while (isNaN(Number(userNumber)) || Number(userNumber) != 1234);
+        for (var i = 2; i < 10; i++) {
+            if (i == 5) {
+                continue;
+            }
+            for (var j = 1; j < 10; j++) {
+                console.log(i + " * " + j + " = " + (i * j));
+            }
+        }
+
+
+
+
+
+
+// 문제 6) 사용자 입력을 통해서 2 ~ 9까지의 숫자 중 하나를 입력받고, 입력받은 숫자의 단수를 제외한 모든 구구단을 출력하는 프로그램을 작성하세요
+    // ps. 숫자인지 아닌지 확인하는 로직 필수
+    // ps. 사용자가 입력한 데이터가 2 ~ 9까지의 숫자일 경우에만 동작
+
+    // var userNumber
+    // do {
+    //     userNumber = prompt("2 ~ 9 까지 입력");
+    //     } while (isNaN(Number(userNumber)) || Number(userNumber) < 2 || Number(userNumber) > 9);
+    //     for (var i = 2; i < 10; i++) {
+    //         if (i == userNumber)
+    //         continue;
+    //     for (j = 1; j < 10; j++) {
+    //         console.log(i + " * " + j + " = " + (i * j));
+    //     }
+    //     }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn03").on("click",function () {
+                $("#img01").toggle("slow",function () {
+                    // $("#img01").
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h3>jquery 효과, hide/show</h3>
+    <div>
+        <button type="button" class="btn btn-primary" id="btn03">숨기기보이기 토글버튼</button>
+    </div>
+
+    <div class="spinner-border" role="status">
+        <img src=".idea/윈터%20움짤3.gif" alt="윈터" id="img01">
+<!--        <img src=".idea/윈터%20움짤5.gif" alt="윈터" id="img02">-->
+    </div>
+</div>
+</body>
+</html>

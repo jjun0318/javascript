@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+    //   var userInput;
+    //   var message;
+    // //   var answerValue
+    //   do {
+    //     userInput = prompt("오늘의 날씨 1.맑음,2.흐림,3.비 중 번호1개만 골라서 입력해주세요.");
+    //   } while (userInput.length !== 1 || (userInput !== "1" && userInput !== "2" && userInput !== "3"));
+
+    //   if (userInput == 1) {
+    //     message = '맑음'
+    //     answerValue = 1
+    //   }
+    //   else if (userInput == 2) {
+    //     message = '흐림'
+    //     answerValue = 2
+    //   }
+    //   else if (userInput == 3) {
+    //     message = '비'
+    //       // answerValue = 3
+    // }
+    //   console.log("오늘의 날씨는 : " + message);
+
+
+var randomValue = Math.floor(Math.random() * 7) + 1;
+
+    switch (randomValue) {
+        case 1:
+            Food = "라멘";
+            break;
+        case 2:
+            Food = "중국집";
+            break;
+        case 3:
+            Food = "돈까스";
+            break;
+        case 4:
+            Food = "햄버거";
+            break;
+        case 5:
+            Food = "콩불";
+            break;
+        case 6:
+            Food = "뒷골목 한식당";
+            break;
+        default:
+            Food = "원 모어 타임";
+    }
+    console.log("랜덤 음식은: " + Food);
+
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 사용자 입력을 통해서 숫자를 하나 입력받고, 숫자에 해당하는 구구단을 출력하기
+
+        //     var dan = prompt("출력할 구구단의 숫자를 입력해주세요");
+        //     dan = Number(dan);
+    
+        //     console.log("\n ----- " + dan + "단 ----- \n")
+            
+        //     for (var i = 1; i < 10; i++) {
+        //         console.log(dan + " * " + i + " = " + dan * i);
+        //     }
+
+        //     var dan = prompt("출력할 구구단의 숫자를 입력해주세요");
+        //     dan = Number(dan);
+    
+        //     console.log("\n ----- " + dan + "단 ----- \n")
+            
+        //     for (var i = 1; i < 10; i++) {
+        //         console.log(dan + " * " + i + " = " + dan * i);
+        //     }
+
+        //     var dan = prompt("출력할 구구단의 숫자를 입력해주세요");
+        //     dan = Number(dan);
+    
+        //     console.log("\n ----- " + dan + "단 ----- \n")
+            
+        //     for (var i = 1; i < 10; i++) {
+        //         console.log(dan + " * " + i + " = " + dan * i);
+        //     }
+
+        // 출력할 구구단의 단수를 입력받는 합수 선언
+        function inputDan() {
+            var dan = prompt("출력할 구구단의 숫자를 입력해주세요")
+            dan = Number(dan);
+
+            return dan;
+        }
+
+        // 구구단 출력용 함수 선언
+        function gugudan(dan) {
+            
+            console.log("\n ----- " + dan + "단 ----- \n")
+            
+            for (var i = 1; i < 10; i++) {
+                console.log(dan + " * " + i + " = " + dan * i);
+            }
+        }
+        
+        // 내가 입력한 숫자부터 3개 단수의 구구단을 출력
+
+        // var dan = prompt("출력할 구구단의 숫자를 입력해주세요");
+        // dan = Number(dan);
+
+        var dan = inputDan();
+
+        // 함수의 호출
+        gugudan(dan);
+        gugudan(dan + 1);
+        gugudan(dan + 2);
+
+
+        console.log("\n ----- 함수의 4가지 형태 ----- \n");
+        function sum1() {
+            var a = 10;
+            var b = 20;
+            var c = a + b;
+            console.log("두 수의 덧셈은" + c);
+        }
+
+        function sum2(a, b) {
+            var c = a + b;
+            console.log("두 수의 덧셈은" + c);
+        }
+
+        function sum3() {
+            var a = 10;
+            var b = 20;
+            var c = a + b;
+
+            return c;
+        }
+
+        function sum4(a, b) {
+            var c = a + b;
+
+            return c;
+        }
+
+        // 1번 타입 호출
+        sum1();
+        sum1();
+        // 2번 타입 호출
+        sum2(10, 20);
+        sum2(100, 200);
+        // 3번 타입 호출
+        var result = sum3();
+        console.log("두 수의 덧셈은 " + result);
+        result = sum3() + 100;
+        console.log("두 수의 덧셈은 " + result);
+        // 4번 타입 호출
+        var result = sum4(10, 20);
+        console.log("두 수의 덧셈은 " + result);
+        result = sum4(100, 200);
+        console.log("두 수의 덧셈은 " + (result + 100));
+
+        // 문제 1) 함수의 4가지 방식을 사용하여 덧셈, 뺄셈, 곱셈, 나눗셈용 함수를 작성하고 호출하여 사용하세요..
+        // ps. 덧셈 함수명 sum, 2번 방식으로 만드세요
+        // ps. 뺄셈 함수명 sub, 3번 방식으로 만드셈
+        // ps. 곱셈 함수명 multi, 4번 방식으로 만드셈
+        // ps. 나눗셈 함수명 div, 1번 방식으로 만드셈
+        // 사용하는 변수는 a(함수의 내장 변수 , 매개변수), b(함수의 내장 변수 매개변수), c(함수의 지역 변수), result(반환값을 받기 위한 변수)
+
+
+        function div() {
+            var a = 20;
+            var b = 10;
+            var c = a / b;
+            console.log("두 수의 나눗셈 " + c);
+        }
+
+        function sum(a, b) {
+            var c = a + b;
+            console.log("두 수의 덧셈 " + c);
+        }
+
+        function sub() {
+            var a = 20;
+            var b = 10;
+            var c = a - b;
+
+            return c;
+        }
+
+        function multi(a, b) {
+            var c = a * b;
+
+            return c;
+        }
+
+        console.log("\n----- 1번 타입 나눗셈 -----\n");
+        div();
+
+        console.log("\n----- 2번 타입 덧셈 -----\n");
+        sum(10, 20);
+
+        console.log("\n----- 3번 타입 뺄셈 -----\n");
+        var result = sub();
+        console.log("두 수의 뺄셈은 " + result);
+
+        console.log("\n----- 4번 타입 곱셈 -----\n");
+        var result = multi(10, 20);
+        console.log("두 수의 곱셈은 " + result);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
